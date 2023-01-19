@@ -10,7 +10,7 @@ Everything must be separated by a space.
 Don't worry, if you add extra spaces, everything will work.
 Feel free to change the passwords.txt file.
 
-**Envaironment**
+**Environment**
 
 - node version: 19.4.0
 - npm version: 9.2.0
