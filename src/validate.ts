@@ -21,7 +21,7 @@ export const validate = (line: string): boolean => {
   ] = partsOfLine;
 
   if (isNaN(+frequencyFrom) || isNaN(+frequencyTo)) {
-    throw new Error('Invalid range');
+    throw new Error('Invalid range. Expected range format: <number>-<number>:');
   }
 
   const countOfRequiredChars = password
