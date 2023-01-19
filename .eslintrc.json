@@ -1,9 +1,13 @@
 {
+  "parser": "@typescript-eslint/parser",
   "env": {
     "browser": true,
     "es2021": true
   },
-  "extends": "standard-with-typescript",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -12,7 +16,6 @@
   },
   "rules": {
     "max-len": ["error", { "code": 80 }],
-    "semi": ["error", "always"],
-    "no-console": ["error"]
+    "semi": ["error", "always"]
   }
 }

@@ -3,17 +3,21 @@
 import fs from 'fs';
 import { validate } from './validate.js';
 
-export const getNumberOfValidPasswords = (relativeFilePath) => {
+export const getNumberOfValidPasswords = (relativeFilePath: string): number => {
   const AbsolutePathToFile = new URL(relativeFilePath, import.meta.url);
   const fileContents = fs.readFileSync(AbsolutePathToFile, 'utf-8');
 
   let numberOfValidPasswords = 0;
 
-  fileContents.split(/\r?\n/).forEach(line => {
-    const isValid = validate(line);
+  fileContents.split(/\r?\n/).forEach((line, i) => {
+    try {
+      const isValid = validate(line);
 
-    if (isValid) {
-      numberOfValidPasswords++;
+      if (isValid) {
+        numberOfValidPasswords++;
+      }
+    } catch (error) {
+      console.log(`${error} in ${i + 1} line`);
     }
   });
 
@@ -22,5 +26,4 @@ export const getNumberOfValidPasswords = (relativeFilePath) => {
 
 const NumberOfValidPasswords = getNumberOfValidPasswords('./passwords.txt');
 
-// eslint-disable-next-line no-console
 console.log(NumberOfValidPasswords);
