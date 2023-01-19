@@ -1,11 +1,12 @@
 **About**
 
-This app counts a number of valid passwords. Valid data in the passwords.txt file should contain:
+This app counts a number of valid passwords. Valid data in the passwords.txt file must contain:
 
 - required charachter;
 - range in follow format `<number>-<number>:`;
 - password.
 
+Everything must be separated by a space.
 Don't worry, if you add extra spaces, everything will work.
 Feel free to change the passwords.txt file.
 
