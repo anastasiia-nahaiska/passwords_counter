@@ -17,7 +17,8 @@ Feel free to change the passwords.txt file.
 
 **Running**
 
-Run in the terminal:
+Fork and clone this repository and after that run it by your IDE.
+After that open the terminal and run:
 `npm i` for install necessary packages
 `ts-node ./src/app.ts` for run code
 
