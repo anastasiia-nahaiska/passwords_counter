@@ -5,9 +5,7 @@
     "es2021": true
   },
   "plugins": ["@typescript-eslint"],
-  "extends": [
-    "plugin:@typescript-eslint/recommended"
-  ],
+  "extends": ["plugin:@typescript-eslint/recommended"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",

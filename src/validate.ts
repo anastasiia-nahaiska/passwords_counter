@@ -22,11 +22,11 @@ export const validate = (line: string): boolean => {
 
   const countOfRequiredChars = password
     .split('')
-    .filter((char) => char === requiredChar)
-    .length;
+    .filter((char) => char === requiredChar).length;
 
-  const isValidPassword = countOfRequiredChars >= +frequencyFrom
-    && countOfRequiredChars <= +frequencyTo;
+  const isValidPassword =
+    countOfRequiredChars >= +frequencyFrom &&
+    countOfRequiredChars <= +frequencyTo;
 
   return isValidPassword;
 };
