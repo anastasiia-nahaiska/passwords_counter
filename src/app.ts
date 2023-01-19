@@ -1,29 +1,17 @@
 'use strict';
 
 import fs from 'fs';
-import { validate } from './validate.js';
 
-export const getNumberOfValidPasswords = (relativeFilePath: string): number => {
+import { getNumberOfValidPasswords } from './getNumberOfValidPasswords.js';
+
+export const app = (relativeFilePath: string): number => {
   const AbsolutePathToFile = new URL(relativeFilePath, import.meta.url);
-  const fileContents = fs.readFileSync(AbsolutePathToFile, 'utf-8');
-
-  let numberOfValidPasswords = 0;
-
-  fileContents.split(/\r?\n/).forEach((line, i) => {
-    try {
-      const isValid = validate(line);
-
-      if (isValid) {
-        numberOfValidPasswords++;
-      }
-    } catch (error) {
-      console.log(`${error} in ${i + 1} line`);
-    }
-  });
+  const fileContent = fs.readFileSync(AbsolutePathToFile, 'utf-8');
+  const numberOfValidPasswords = getNumberOfValidPasswords(fileContent);
 
   return numberOfValidPasswords;
 };
 
-const NumberOfValidPasswords = getNumberOfValidPasswords('./passwords.txt');
+const result = app('./passwords.txt');
 
-console.log(NumberOfValidPasswords);
+console.log(result);
