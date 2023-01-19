@@ -20,6 +20,6 @@ Feel free to change the passwords.txt file.
 Fork and clone this repository and after that run it by your IDE.
 After that open the terminal and run:
 `npm i` for install necessary packages
-`ts-node ./src/app.ts` for run code
+`npx ts-node ./src/app.ts` for run code (or `ts-node ./src/app.ts` if you have [ts-node](https://www.npmjs.com/package/ts-node#tsconfig-options) globally)
 
 Now you can see a result in the terminal.
