@@ -5,16 +5,20 @@ export const validate = (line: string): boolean => {
     return false;
   }
 
-  const partsOfLine = line.split(/[\s-:]+/g);
+  const partsOfLine = line.trim().split(/[\s-:]+/g);
 
   if (partsOfLine.length !== 4) {
-    throw new Error('Invalid data');
+    throw new Error(
+      'Invalid data. Expected format: <symbol> <number>-<number>: <password>'
+    );
   }
 
-  const requiredChar = partsOfLine[0];
-  const frequencyFrom = partsOfLine[1];
-  const frequencyTo = partsOfLine[2];
-  const password = partsOfLine[3];
+  const [
+    requiredChar,
+    frequencyFrom,
+    frequencyTo,
+    password
+  ] = partsOfLine;
 
   if (isNaN(+frequencyFrom) || isNaN(+frequencyTo)) {
     throw new Error('Invalid range');
