@@ -1,4 +1,5 @@
 **About**
+
 This app counts a number of valid passwords. Valid data in the passwords.txt file should contain:
 
 - required charachter;
@@ -14,6 +15,7 @@ Feel free to change the passwords.txt file.
 - npm version: 9.2.0
 
 **Running**
+
 Run in the terminal:
 `npm i` for install necessary packages
 `ts-node ./src/app.ts` for run code
